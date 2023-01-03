@@ -1,9 +1,19 @@
 #!/bin/bash
 clear
-sudo yum -y install java-1.8.0-openjdk epel-release
+sudo amazon-linux-extras install java-openjdk11 -y
 sudo wget -O /etc/yum.repos.d/jenkins.repo http://pkg.jenkins-ci.org/redhat-stable/jenkins.repo
 sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
 sudo yum -y install jenkins-2.375.1-1.1 git
 sudo systemctl start jenkins
 sudo systemctl enable jenkins
 sudo systemctl status jenkins
+echo "passed test"
+
+
+#!/bin/bash
+clear
+sudo yum -y install java-1.8.0-openjdk epel-release
+sudo wget -O /etc/yum.repos.d/jenkins.repo http://pkg.jenkins-ci.org/redhat-stable/jenkins.repo
+sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
+sudo yum -y install jenkins-2.277.4-1.1
+echo 'failed'
